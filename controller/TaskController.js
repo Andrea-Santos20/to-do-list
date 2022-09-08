@@ -55,19 +55,6 @@ const getById = async (req, res) => {
   }
 };
 
-const getByIdTest = async (req, res) => {
-    console.log(req.params.id)
-    const task = await Task.findOne({ _id: req.params.id });
-    console.log(task)
-    res.status(200).send({ 
-      id: task.id, 
-      date: task.date, 
-      confirm: task.check,
-  });
-
-};
-
-
 const updateOneTask = async (req, res) => {
   try {
     const task = req.body;
@@ -108,7 +95,6 @@ module.exports = {
   getAllTasks,
   createTask,
   getById,
-  getByIdTest,
   updateOneTask,
   deleteOneTask,
   taskCheck,
